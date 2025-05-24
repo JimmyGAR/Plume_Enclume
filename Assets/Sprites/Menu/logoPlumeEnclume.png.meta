@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      logoPlumeEnclume_0: -5772259764453763487
+      logoPlumeEnclume_1: -6704773688380892863
+      logoPlumeEnclume_2: -8460876675541307888
+      logoPlumeEnclume_3: 8538175836476629085
+      logoPlumeEnclume_4: 6431218550262026282
+      logoPlumeEnclume_5: -4600692010792272515
+      logoPlumeEnclume_6: -6633734108573591237
+      logoPlumeEnclume_7: -4457333785887745972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
