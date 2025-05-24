@@ -4,15 +4,19 @@ using UnityEngine.SceneManagement;
 public class CollisionPlume : MonoBehaviour
 {
     public int life = 3;
+    public int apples = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Spike"))
+        if (collision.CompareTag("Spike"))
         {
-            if (collision.CompareTag("Spike"))
-            {
-                TakeDamage(3);
-            }
+            TakeDamage(3);
+        }
+
+        if (collision.CompareTag("Apple"))
+        {
+            apples++;
+            Destroy(collision.gameObject);
         }
     }
 
