@@ -9,6 +9,8 @@ public class StartScene : MonoBehaviour
     Animator animator;
     public SpriteRenderer forgeron;
     public SpriteRenderer logo;
+    public SpriteRenderer AnimMenu;
+    public Animator menuAnimation;
     public Canvas myCanvasStart;
     public Canvas myCanvasMenu;
 
@@ -17,6 +19,7 @@ public class StartScene : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         myCanvasMenu.gameObject.SetActive(false);
+        AnimMenu.gameObject.SetActive(false);
     }
 
     public void PlayGame()
@@ -42,6 +45,12 @@ public class StartScene : MonoBehaviour
 
         Destroy(forgeron.gameObject);
         Destroy(logo.gameObject);
+
+        AnimMenu.gameObject.SetActive(true);
+
+        menuAnimation.SetBool("Start", true);
+
+        yield return new WaitForSeconds(1f);
 
         myCanvasMenu.gameObject.SetActive(true);
     }
