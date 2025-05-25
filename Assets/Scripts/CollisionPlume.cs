@@ -18,6 +18,20 @@ public class CollisionPlume : MonoBehaviour
             apples++;
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Apple"))
+        {
+            EndGameManager.totalApples++;
+            Debug.Log("Total pommes : " + EndGameManager.totalApples);
+            Destroy(collision.gameObject);
+        }
+
+
+        if (collision.CompareTag("EndLevel"))
+        {
+            EndGameManager.PlayerArrived("Plume");
+        }
+
     }
 
     public void TakeDamage(int damage)

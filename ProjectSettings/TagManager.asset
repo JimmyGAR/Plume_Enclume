@@ -8,6 +8,8 @@ TagManager:
   - Apple
   - Plume
   - Enclume
+  - End
+  - EndLevel
   layers:
   - Default
   - TransparentFX

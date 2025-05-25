@@ -5,6 +5,7 @@ public class CollisionEnclume : MonoBehaviour
 {
     public int life = 3;
     public int apples = 0;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -15,9 +16,17 @@ public class CollisionEnclume : MonoBehaviour
 
         if (collision.CompareTag("Apple"))
         {
-            apples++;
+            EndGameManager.totalApples++;
+            Debug.Log("Total pommes : " + EndGameManager.totalApples);
             Destroy(collision.gameObject);
         }
+
+
+        if (collision.CompareTag("EndLevel"))
+        {
+            EndGameManager.PlayerArrived("Enclume");
+        }
+
 
     }
 
