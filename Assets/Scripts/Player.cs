@@ -11,12 +11,15 @@ public class Player : MonoBehaviour
     float horizontal;
     SpriteRenderer sr;
     Animator animator;
+    bool gameIsPaused;
+    public PauseMenu pauseMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        gameIsPaused = false;
     }
 
     // Update is called once per frame
@@ -25,6 +28,19 @@ public class Player : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
         animator.SetFloat("speed", Mathf.Abs(horizontal));
         animator.SetBool("isGrounded", IsGrounded());
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameIsPaused)
+            {
+                pauseMenu.Resume();
+                gameIsPaused = false;
+            } else
+            {
+                pauseMenu.Pause();
+                gameIsPaused = true;
+            }
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
