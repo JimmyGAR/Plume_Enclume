@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndGameManager : MonoBehaviour
+public class EndGameBeiza : MonoBehaviour
 {
     public static int totalApples = 0;
 
     public static bool plumeArrived = false;
     public static bool enclumeArrived = false;
 
-    public int requiredApples = 14;
+    public int requiredApples = 10;
 
     void Update()
     {
@@ -17,8 +17,9 @@ public class EndGameManager : MonoBehaviour
             if (totalApples == requiredApples)
             {
                 Debug.Log("Victoire !");
-                // Charger le niveau 2 
-                SceneManager.LoadScene("Beiza");
+                
+                // Charger le niveau 3 
+                SceneManager.LoadScene("Jimmy");
 
             }
             else
@@ -41,6 +42,9 @@ public class EndGameManager : MonoBehaviour
         {
             plumeArrived = true;
         }
-        if (who == "Enclume") enclumeArrived = true;
+        if (who == "Enclume")
+        {
+            enclumeArrived = true;
+        }
     }
 }

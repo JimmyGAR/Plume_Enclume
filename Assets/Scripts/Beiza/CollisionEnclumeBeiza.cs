@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CollisionEnclume : MonoBehaviour
+public class CollisionEnclumeBeiza : MonoBehaviour
 {
     public int life = 3;
     public int apples = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.CompareTag("Spike"))
         {
             TakeDamage(3);
@@ -16,17 +16,16 @@ public class CollisionEnclume : MonoBehaviour
 
         if (collision.CompareTag("Apple"))
         {
-            EndGameManager.totalApples++;
-            Debug.Log("Total pommes : " + EndGameManager.totalApples);
+            EndGameBeiza.totalApples++;
+            Debug.Log("Total pommes : " + EndGameBeiza.totalApples);
             Destroy(collision.gameObject);
         }
 
 
-        if (collision.CompareTag("EndLevel"))
+        if (collision.CompareTag("EndLevelBeiza"))
         {
-            EndGameManager.PlayerArrived("Enclume");
+            EndGameBeiza.PlayerArrived("Enclume");
         }
-
 
     }
 
