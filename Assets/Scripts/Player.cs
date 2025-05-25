@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float jumpingPower;
     public LayerMask groundLayer;
     public Transform groundCheck;
+    public bool flip = false;
     float horizontal;
     SpriteRenderer sr;
     Animator animator;
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
         animator.SetFloat("speed", Mathf.Abs(horizontal));
         animator.SetBool("isGrounded", IsGrounded());
 
@@ -43,11 +43,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+    }
+
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
 
-        if (horizontal != 0)
+        if (horizontal != 0 && flip)
         {
             sr.flipX = horizontal < 0;
         }
