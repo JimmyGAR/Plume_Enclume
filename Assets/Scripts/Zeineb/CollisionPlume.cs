@@ -15,12 +15,6 @@ public class CollisionPlume : MonoBehaviour
 
         if (collision.CompareTag("Apple"))
         {
-            apples++;
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.CompareTag("Apple"))
-        {
             EndGameManager.totalApples++;
             Debug.Log("Total pommes : " + EndGameManager.totalApples);
             Destroy(collision.gameObject);
