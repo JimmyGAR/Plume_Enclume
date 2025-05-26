@@ -22,6 +22,7 @@ public class EndGameBeiza : MonoBehaviour
                 SceneManager.LoadScene("Jimmy");
 
             }
+            
             else
             {
                 Debug.Log("Il manque des pommes !");

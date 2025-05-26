@@ -6515,8 +6515,8 @@ Transform:
   m_GameObject: {fileID: 2145123014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.356, y: 3.291, z: 0}
-  m_LocalScale: {x: 0.42628253, y: 0.49557626, z: 1}
+  m_LocalPosition: {x: -6.2813, y: 3.3259, z: 0}
+  m_LocalScale: {x: 0.57569456, y: 0.56530386, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6544,6 +6544,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3875678099640453279, guid: 1b7b0e67e6e430247a2b5be21627899d, type: 3}
       propertyPath: m_Name
+      value: Plume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875678099640453279, guid: 1b7b0e67e6e430247a2b5be21627899d, type: 3}
+      propertyPath: m_TagString
       value: Plume
       objectReference: {fileID: 0}
     - target: {fileID: 4149199875417694467, guid: 1b7b0e67e6e430247a2b5be21627899d, type: 3}
@@ -6652,6 +6656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6893893954927489541, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
       propertyPath: m_Name
+      value: Enclume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893893954927489541, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
+      propertyPath: m_TagString
       value: Enclume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
