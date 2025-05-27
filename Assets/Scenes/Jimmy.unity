@@ -4348,7 +4348,7 @@ GameObject:
   - component: {fileID: 1700523225}
   - component: {fileID: 1700523227}
   m_Layer: 0
-  m_Name: Forgeron_0001_0
+  m_Name: Forgeron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
