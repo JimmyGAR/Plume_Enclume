@@ -43,6 +43,7 @@ public class CollisionPlume : MonoBehaviour
 
     public void RestartLevel()
     {
+        EndGameManager.ResetGame(); // reset des variables de fin de jeu
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

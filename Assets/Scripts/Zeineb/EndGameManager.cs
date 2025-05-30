@@ -29,6 +29,14 @@ public class EndGameManager : MonoBehaviour
         }
     }
 
+    public static void ResetGame()
+    {
+        totalApples = 0;
+        plumeArrived = false;
+        enclumeArrived = false;
+    }
+
+
     public static void AddApple()
     {
         totalApples++;
