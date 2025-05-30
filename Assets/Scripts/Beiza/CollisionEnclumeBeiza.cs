@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CollisionEnclumeBeiza : MonoBehaviour
 {
     public int life = 3;
     public int apples = 0;
+    Animator animator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,8 +39,15 @@ public class CollisionEnclumeBeiza : MonoBehaviour
 
     public void Die()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 150);
-        GetComponent<Collider2D>().isTrigger = true;
+        animator.SetBool("isDie", true);
+
+        StartCoroutine(WaitAndDoSomething());
+    }
+
+    IEnumerator WaitAndDoSomething()
+    {
+        yield return new WaitForSeconds(0.5f);
+
         Invoke("RestartLevel", 1);
     }
 
