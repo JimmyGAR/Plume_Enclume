@@ -1013,7 +1013,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5d2de334b8709374ab2cde0f8bae9f4f, type: 3}
   m_Resource: {fileID: 8300000, guid: 5d2de334b8709374ab2cde0f8bae9f4f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.565
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7976,6 +7976,18 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 366595144}
+    - target: {fileID: 179583855627697656, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 179583855627697656, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionId
+      value: 0074284d-6f21-48ad-a00f-d98e73c1a45b
+      objectReference: {fileID: 0}
+    - target: {fileID: 179583855627697656, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionName
+      value: 'Player/StabiliseEnclume[/Keyboard/downArrow]'
+      objectReference: {fileID: 0}
     - target: {fileID: 1661371386637432435, guid: 7728eb3752c1f624d90fce2194592463, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.33
