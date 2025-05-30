@@ -9,21 +9,22 @@ public class EndGameManager : MonoBehaviour
     public static bool enclumeArrived = false;
 
     public int requiredApples = 14;
+    private bool levelEnded = false;
 
     void Update()
     {
-        if (plumeArrived && enclumeArrived)
+        if (!levelEnded && plumeArrived && enclumeArrived)
         {
             if (totalApples == requiredApples)
             {
                 Debug.Log("Victoire !");
-                // Charger le niveau 2 
-                SceneManager.LoadScene("Beiza");
-
+                levelEnded = true; 
+                SceneManager.LoadScene("VictoryScreen_N1"); // passage au victory screen
             }
             else
             {
                 Debug.Log("Il manque des pommes !");
+                levelEnded = true; 
             }
         }
     }
@@ -40,6 +41,9 @@ public class EndGameManager : MonoBehaviour
         {
             plumeArrived = true;
         }
-        if (who == "Enclume") enclumeArrived = true;
+        if (who == "Enclume")
+        {
+            enclumeArrived = true;
+        }
     }
 }
