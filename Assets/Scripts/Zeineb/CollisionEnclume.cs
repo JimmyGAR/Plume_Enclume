@@ -6,11 +6,13 @@ public class CollisionEnclume : MonoBehaviour
 {
     public int life = 3;
     public int apples = 0;
+    Rigidbody2D rb;
     Animator animator;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +46,9 @@ public class CollisionEnclume : MonoBehaviour
 
     public void Die()
     {
-        animator.SetBool("isDie", true);
+        rb.bodyType = RigidbodyType2D.Static;
+
+        animator.Play("EnclumeDieAnimation");
 
         StartCoroutine(WaitAndDoSomething());
     }
