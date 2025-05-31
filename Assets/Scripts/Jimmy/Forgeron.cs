@@ -6,9 +6,12 @@ public class Forgeron : MonoBehaviour
 {
     public Canvas Victory;
     public GameObject Hammer;
+    public GameObject Spikes;
     public ShakeData ForgeronShaker;
     public float healthMax;
     public float currentHealth;
+    AudioSource victoryMusic;
+    public AudioManager audioManager;
     Animator animator;
     public Image bar;
 
@@ -17,6 +20,7 @@ public class Forgeron : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Victory.gameObject.SetActive(false);
+        victoryMusic = GetComponent<AudioSource>();
 
         CameraShakerHandler.Shake(ForgeronShaker);
     }
@@ -29,9 +33,12 @@ public class Forgeron : MonoBehaviour
             bar.fillAmount = currentHealth / healthMax;
         } else
         {
+            audioManager.PlayEnding();
+            victoryMusic.Play();
             Destroy(bar);
-            Destroy(gameObject);
-            Destroy(Hammer);
+            Hammer.SetActive(false);
+            Spikes.SetActive(false);
+            Destroy(gameObject, victoryMusic.clip.length);
             Victory.gameObject.SetActive(true);
         }
     }

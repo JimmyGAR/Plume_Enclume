@@ -6,6 +6,7 @@ public class EnclumeMovesets : MonoBehaviour
     public CircleCollider2D circleCollider2D;
     public BoxCollider2D boxCollider2D;
     public Rigidbody2D rb;
+    AudioSource audioSource;
     Animator animator;
     bool isStabilised = false;
 
@@ -14,6 +15,7 @@ public class EnclumeMovesets : MonoBehaviour
     {
         isStabilised = false;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Stabilise(InputAction.CallbackContext context)
@@ -28,6 +30,8 @@ public class EnclumeMovesets : MonoBehaviour
             animator.SetBool("isStabilised", true);
 
             isStabilised = true;
+
+            audioSource.Play();
         } 
         else if (context.performed && isStabilised) 
         {

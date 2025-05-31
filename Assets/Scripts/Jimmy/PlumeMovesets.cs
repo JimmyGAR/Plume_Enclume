@@ -8,10 +8,12 @@ public class PlumeMovesets : MonoBehaviour
     private bool isHolding = false;
     private bool isHere = false;
     Animator animator;
+    AudioSource attackSound;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        attackSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class PlumeMovesets : MonoBehaviour
         if (context.performed)
         {
             animator.SetBool("isAttacking", true);
+            attackSound.Play();
             isHolding = true;
         }
         else if (context.canceled)
