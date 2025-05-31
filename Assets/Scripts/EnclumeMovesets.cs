@@ -22,6 +22,7 @@ public class EnclumeMovesets : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             gameObject.layer = LayerMask.NameToLayer("ground");
+            gameObject.tag = "StabiliseEnclume";
             circleCollider2D.enabled = false;
             boxCollider2D.enabled = true;
             animator.SetBool("isStabilised", true);
@@ -32,6 +33,7 @@ public class EnclumeMovesets : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
             gameObject.layer = 0;
+            gameObject.tag = "Untagged";
             circleCollider2D.enabled = true;
             boxCollider2D.enabled = false;
             animator.SetBool("isStabilised", false);

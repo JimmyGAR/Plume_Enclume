@@ -11,6 +11,7 @@ TagManager:
   - End
   - EndLevel
   - EndLevelBeiza
+  - StabiliseEnclume
   layers:
   - Default
   - TransparentFX

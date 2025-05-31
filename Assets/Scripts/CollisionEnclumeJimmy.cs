@@ -9,6 +9,7 @@ public class CollisionEnclumeJimmy : MonoBehaviour
     //public int apples = 0;
     Rigidbody2D rb;
     Animator animator;
+    bool isDied = false;
 
     private void Start()
     {
@@ -19,9 +20,12 @@ public class CollisionEnclumeJimmy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Spike"))
+        if (gameObject.tag != "StabiliseEnclume" && gameObject.layer != LayerMask.NameToLayer("ground"))
         {
-            TakeDamage(3);
+            if (collision.CompareTag("Spike"))
+            {
+                TakeDamage(3);
+            }
         }
 
         /* Tu peux garder ou changer ce code : cest pour que toutes le pommes soient recupérés sinon pas de fin de jeu
@@ -45,11 +49,17 @@ public class CollisionEnclumeJimmy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         life -= damage;
-        Die();
+
+        if (life <= 0 && !isDied)
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
+        isDied = true;
+
         rb.bodyType = RigidbodyType2D.Static;
 
         animator.Play("EnclumeDieAnimation");

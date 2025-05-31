@@ -6,6 +6,7 @@ public class ColisionPlumeJimmy : MonoBehaviour
     
     public int life = 3;
     public int apples = 0;
+    bool isDied = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class ColisionPlumeJimmy : MonoBehaviour
             TakeDamage(3);
         }
 
-        /* Tu peux garder ou changer ce code : cest pour que toutes le pommes soient recupérés sinon pas de fin de jeu
+        /* Tu peux garder ou changer ce code : cest pour que toutes le pommes soient recupï¿½rï¿½s sinon pas de fin de jeu
         if (collision.CompareTag("Apple"))
         {
             EndGameManager.totalApples++;
@@ -36,12 +37,18 @@ public class ColisionPlumeJimmy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         life -= damage;
-        Die();
+
+        if (life <= 0 && !isDied)
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 150);
+        isDied = true;
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 90);
         GetComponent<Collider2D>().isTrigger = true;
         Invoke("RestartLevel", 1);
     }

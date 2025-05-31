@@ -116,10 +116,10 @@ TextureImporter:
       name: Forgeron_0001_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 17
+        y: 24
+        width: 17
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

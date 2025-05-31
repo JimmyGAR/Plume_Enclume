@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8281c11a301ee074d857e746fae1832b
+guid: b914fc06c9ce82a4ab16ef4ce1f40367
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4504263763294579124
-    second: Forgeron_0002_0
+      213: -6705749835432758854
+    second: plume_0009_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forgeron_0002_0
+      name: plume_0009_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 26
-        width: 17
-        height: 38
+        x: 13
+        y: 1
+        width: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c46992ec8f3ad71c0800000000000000
-      internalID: -4504263763294579124
+      spriteID: ab17562ad0460f2a0800000000000000
+      internalID: -6705749835432758854
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 69ec5dfc58fc2184ba868621e39faafc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Forgeron_0002_0: -4504263763294579124
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -45,7 +45,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        if (gameObject.tag != "StabiliseEnclume" && gameObject.layer != LayerMask.NameToLayer("ground"))
+        {
+            rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
