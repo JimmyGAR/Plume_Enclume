@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using FirstGearGames.SmoothCameraShaker;
+using Unity.VisualScripting;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         CameraShakerHandler.Shake(HammerShaker);
         rb.bodyType = RigidbodyType2D.Static;
+        go.layer = LayerMask.NameToLayer("ground");
     }
 
 
@@ -65,6 +67,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         boxCollider2D.enabled = false;
+        go.layer = LayerMask.NameToLayer("Default");
 
         Play();
 

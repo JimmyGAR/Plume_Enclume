@@ -12,6 +12,7 @@ TagManager:
   - EndLevel
   - EndLevelBeiza
   - StabiliseEnclume
+  - Forgeron
   layers:
   - Default
   - TransparentFX

@@ -123,6 +123,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "AttackPlume",
+                    "type": "Button",
+                    "id": "1b0e27b2-a94b-4191-9449-eaa85a48cf60",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "JumpEnclume",
                     "type": "Button",
                     "id": "0382ad7c-ba0d-4de2-ac8a-2e8fa01118bc",
@@ -603,6 +612,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "StabiliseEnclume",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd416abb-28f7-4990-be35-3234618fa484",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AttackPlume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
