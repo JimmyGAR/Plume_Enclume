@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Classe principale du joueur
+/// </summary>
+/// <author> GARNIER Jimmy </author>
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -43,6 +47,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Semblable à Update mais est appelé beaucoupl plus souvent, permettant des déplacement plus régulier sans arrêt
+    /// </summary>
+    /// <author> GARNIER Jimmy</author>
     void FixedUpdate()
     {
         if (gameObject.tag != "StabiliseEnclume" && gameObject.layer != LayerMask.NameToLayer("ground"))
@@ -51,6 +59,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction qui permet au joueur de bouger
+    /// </summary>
+    /// <author> GARNIER Jimmy</author>
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
@@ -61,6 +73,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction qui permet au joueur de sauter
+    /// </summary>
+    /// <author> GARNIER Jimmy</author>
     public void Jump(InputAction.CallbackContext context)
     {
         if (context.performed && IsGrounded())
@@ -69,9 +85,13 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Fonction qui permet de savoir si le personnage est présent sur le sol (à partir d'un objet empty situé au pieds de chaque personnage)
+    /// </summary>
+    /// <author> GARNIER Jimmy</author>
     bool IsGrounded()
     {
+        // Permet d'ajouter un micro composant invisible qui va permettre de savoir si il touche le sol (le sol étant configuré sur le layer "ground")
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(.1f, .1f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 

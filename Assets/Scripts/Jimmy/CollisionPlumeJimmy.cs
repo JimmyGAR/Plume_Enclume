@@ -34,11 +34,15 @@ public class ColisionPlumeJimmy : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Fonction qui permet de prendre les dommages reçus lors d'une collision avec un autre objet
+    /// </summary>
+    /// <author> GARNIER Jimmy </author>
     public void TakeDamage(int damage)
     {
         life -= damage;
 
-        if (life <= 0 && !isDied)
+        if (life <= 0 && !isDied) // Ajout d'une fonctionnalitée en plus car le personnage pouvait mourir plusieurs fois d'affilé
         {
             Die();
         }
@@ -48,7 +52,7 @@ public class ColisionPlumeJimmy : MonoBehaviour
     {
         isDied = true;
         GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 90);
+        GetComponent<Rigidbody2D>().AddForce(Vector3.up * 90); 
         GetComponent<Collider2D>().isTrigger = true;
         Invoke("RestartLevel", 1);
     }

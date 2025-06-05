@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+
 public class CollisionEnclumeJimmy : MonoBehaviour
 {
 
@@ -11,16 +12,23 @@ public class CollisionEnclumeJimmy : MonoBehaviour
     Animator animator;
     bool isDied = false;
 
+    /// <summary>
+    /// Fonction de démarrage qui permet en grande partie d'intialiser les variables qui seront utilisées plus tard
+    /// </summary>
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
+    /// <summary>
+    /// Fonction qui va fonctionné à chaque que le joueur va être en collision avec un obejt qui porte un tag différent (ici spike)
+    /// </summary>
+    /// <author> GARNIER Jimmy </author>
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (gameObject.tag != "StabiliseEnclume" && gameObject.layer != LayerMask.NameToLayer("ground"))
+        if (gameObject.tag != "StabiliseEnclume" && gameObject.layer != LayerMask.NameToLayer("ground")) // Permet de dire que si Enclume est dans sa phase de "stabilise", il ne meurt pas
         {
             if (collision.CompareTag("Spike"))
             {
@@ -28,7 +36,7 @@ public class CollisionEnclumeJimmy : MonoBehaviour
             }
         }
 
-        /* Tu peux garder ou changer ce code : cest pour que toutes le pommes soient recupérés sinon pas de fin de jeu
+        /* Code qui oblige à ce que les pommes soit récupérées avant de pouvoir finir le level
         if (collision.CompareTag("Apple"))
         {
             EndGameManager.totalApples++;
@@ -46,6 +54,9 @@ public class CollisionEnclumeJimmy : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Fonction qui permet de prendre les dommages reçus lors d'une collision avec un autre objet
+    /// </summary>
     public void TakeDamage(int damage)
     {
         life -= damage;
@@ -56,17 +67,25 @@ public class CollisionEnclumeJimmy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction qui permet de dire quand le personnage est mort
+    /// </summary>
+    /// <author> GARNIER Jimmy </author>
     public void Die()
     {
         isDied = true;
 
         rb.bodyType = RigidbodyType2D.Static;
 
-        animator.Play("EnclumeDieAnimation");
+        animator.Play("EnclumeDieAnimation"); // lance l'animation de mort d'Enclume
 
-        StartCoroutine(WaitAndDoSomething());
+        StartCoroutine(WaitAndDoSomething()); // lance une fonction qui est équivalent à un wait() 
     }
 
+    /// <summary>
+    /// Fonction qui attend un certain temps (dans ce cas 0.1 seconde) avant d'exécuter le code qui le suit
+    /// </summary>
+    /// <author> GARNIER Jimmy</author>
     IEnumerator WaitAndDoSomething()
     {
         yield return new WaitForSeconds(0.1f);
@@ -74,7 +93,9 @@ public class CollisionEnclumeJimmy : MonoBehaviour
         Invoke("RestartLevel", 1);
     }
 
-
+    /// <summary>
+    /// Relance le level
+    /// </summary>
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
