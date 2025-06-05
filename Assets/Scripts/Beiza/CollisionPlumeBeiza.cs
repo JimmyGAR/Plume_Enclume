@@ -43,6 +43,7 @@ public class CollisionPlumeBeiza : MonoBehaviour
 
     public void RestartLevel()
     {
+        EndGameBeiza.ResetGame(); // reset des variables de fin de jeu
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
