@@ -1,16 +1,28 @@
 How to play ?
 
 2 players 
--> Enclume
+-> Enclume 
 -> Plume
 
-Z = Plume jump
-Q & D = Plume movement
+Left click mouse to launch the game in the first main menu where there is the title
+
+Echap = menu (only in a level)
+Click to the pause button in the right up corner = menu (again)
+
+house = main menu
+restart = restart the level
+resume = resume the level
+
+
+Z = Plume jump 
+Q & D = Plume movement 
 S = Plume moveset (only in boss level 3)
 
-up arrow = jump Enclume
-left arrow & right arrow = Enclume movement
+up arrow = jump Enclume 
+left arrow & right arrow = Enclume movement 
 down arrow = Enclume moveset (only in boss level 3)
+
+QUIT = go to the main menu with the sword and below the button Play, click to the button quit
 
 Dowload ?
 
